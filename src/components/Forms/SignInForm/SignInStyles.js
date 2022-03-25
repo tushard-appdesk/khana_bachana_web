@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SignInContainer = styled.div` : 
+export const SignInContainer = styled.form` : 
 padding : 10px;
 height : 350px;
 text-align: center;
@@ -8,6 +8,8 @@ display : flex;
 flex-direction: column;
 align-items: center;
 color : #348758;
+font-family: 'Montserrat';
+font-style: normal;
 
 `
 export const SignInHeading = styled.h1`
