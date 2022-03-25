@@ -7,7 +7,7 @@ import { LogoContainer, TopBarConatiner, TopContainer, TopItem } from "./ToBarSt
 
 const TopData = ["Home", "Register", "SignIn"];
 
-export default function TopBar() {
+export default function TopBar(props) {
     const [openModal, setOpenModal] = useState(false);
     const [openModalReg, setOpenModalReg] = useState(false);
 

@@ -1,4 +1,5 @@
 import './App.css';
+import Card from './components/Cards/Card';
 import Footer from './components/Footer/Footer';
 import HomePage from './components/HomePage/HomePage';
 import TopBar from './components/TopBar/TopBAr';
@@ -7,9 +8,10 @@ import TopBar from './components/TopBar/TopBAr';
 function App() {
   return (
     <>
-      <TopBar />
+      {/* <TopBar />
       <HomePage />
-      <Footer />
+      <Footer /> */}
+      <Card />
     </>
   );
 }
