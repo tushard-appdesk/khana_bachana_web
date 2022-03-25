@@ -1,6 +1,7 @@
 import React from "react";
 import { InputField, SignInContainer, SignInHeading, SubmitButton } from "./SignInStyles";
 import { useFormik } from "formik";
+import axios from "axios";
 
 export default function SignInForm(props) {
     const formik = useFormik({
@@ -9,7 +10,12 @@ export default function SignInForm(props) {
             password: ""
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            axios.post('http://localhost:8080/user/signin', values)
+            .then((response) => {
+              console.log(response);
+            }, (error) => {
+              console.log(error);
+            });
         },
     });
 

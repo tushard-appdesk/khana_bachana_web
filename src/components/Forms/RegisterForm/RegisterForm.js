@@ -2,17 +2,25 @@ import React from "react";
 import { SubmitButton } from "../SignInForm/SignInStyles";
 import { FormHeading, InputFields, RegFormContainer, Select } from "./RegisterFormStyles";
 import { useFormik } from "formik";
+import axios from "axios";
 
 export default function RegisterForm(props) {
     const formik = useFormik({
         initialValues: {
-            username: "",
+            name: "",
             password: "",
             email: "",
-            number: ""
+            phone: "",
+            userType: "INDIVIDUAL"
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            console.log(values);
+            axios.post('http://localhost:8080/user/add', values)
+              .then((response) => {
+                console.log(response);
+              }, (error) => {
+                console.log(error);
+              });
         },
     });
     return (
@@ -24,9 +32,9 @@ export default function RegisterForm(props) {
                 <InputFields placeholder="UserName"
                     onChange={formik.handleChange}
                     value={formik.values.username}
-                    id="username"
-                    name="username"
-                    type="username" />
+                    id="name"
+                    name="name"
+                    type="name" />
                 <InputFields placeholder="Email"
                     onChange={formik.handleChange}
                     value={formik.values.email}
@@ -35,8 +43,8 @@ export default function RegisterForm(props) {
                 <InputFields placeholder="Phone Number"
                     onChange={formik.handleChange}
                     value={formik.values.number}
-                    id="number"
-                    name="number" />
+                    id="phone"
+                    name="phone" />
                 <InputFields placeholder="Password" type="password"
                     onChange={formik.handleChange}
                     value={formik.values.password}
@@ -44,7 +52,7 @@ export default function RegisterForm(props) {
                     name="password" />
                 <Select  id="role"onChange={formik.handleChange}
                     value={formik.values.role}
-                    name="role">
+                    name="userType">
                     <option value="INDIVIDUAL">INDIVIDUAL</option>
                     <option value="NGO">NGO</option>
                     <option value="FOOD_STORE">FOOD STORE</option>
