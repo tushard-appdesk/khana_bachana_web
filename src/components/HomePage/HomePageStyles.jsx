@@ -17,7 +17,7 @@ left : 450px;
 font-family: 'Montserrat';
 font-style: normal;
 color : #348758;
-font-size: 27px;
+font-size: 25px;
 `
 export const Heading2 = styled.h4`
 width : 50%;
@@ -27,7 +27,7 @@ left : 450px;
 font-family: 'Montserrat';
 font-style: normal;
 color : #348758;
-font-size: 20px;
+font-size: 24px;
 margin-top:2px;`
 
 export const Data1 = styled.div`
@@ -39,6 +39,21 @@ left : 160px;
 bottom : 160px;
 font-size: 27px;
 `
+export const Button = styled.button`
+position : relative;
+bottom : 580px;
+left : 436px;
+width: 420px;
+height : 70px;
+margin : 10px;
+font-size : 25px;
+color : white;
+padding-left : 10px;
+padding-right : 10px;
+border-radius : 10px;
+background-color: #348758;
+border: 1px solid #BDBDBD;`
+
 export const Data2 = styled.div`
 left : 300px;
 bottom : 300px;

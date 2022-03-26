@@ -1,10 +1,11 @@
 import React from "react";
 import { BackContainer, BackImg, Heading } from "../../Styles/appStyles";
 import Background from "../../assests/icons/background.jpg";
-import { Data1, Heading1, Heading2, InfoHeading, Data2, FoodWaste, Background2, Data3 } from "./HomePageStyles";
+import { Data1, Heading1, Heading2, InfoHeading, Data2, FoodWaste, Background2, Data3, Button } from "./HomePageStyles";
 import FoodWastes from "../../assests/icons/WasteFood.png"
 import TopBar from "../TopBar/TopBAr";
 import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
     return (
@@ -23,6 +24,9 @@ export default function HomePage() {
                 <Heading2>
                     AT GREAT PRICES!
                 </Heading2>
+                <Button>
+                    Get Started 
+                </Button>
 
                 <Data1>
                     We dream of a planet with no food waste, and every day we’re working on making that a reality. Our app is the most direct way for you to get involved - just download, log on, and get saving perfectly good, surplus food from your local stores. It’s always a surprise and an instant good deed for the planet. Get started now.

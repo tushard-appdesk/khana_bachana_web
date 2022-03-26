@@ -18,6 +18,6 @@ left : 450px;
 font-family: 'Montserrat';
 font-style: normal;
 color : #348758;
-font-size: 50px;
+font-size: 55px;
 
 `

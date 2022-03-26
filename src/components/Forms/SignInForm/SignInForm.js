@@ -3,8 +3,10 @@ import { InputField, SignInContainer, SignInHeading, SubmitButton } from "./Sign
 import { useFormik } from "formik";
 import axios from "axios";
 import { setToken } from "../../../token";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SignInForm(props) {
+    const history = useNavigate();
     const formik = useFormik({
         initialValues: {
             username: "",
@@ -39,7 +41,8 @@ export default function SignInForm(props) {
                 id="password"
                 name="password"/>
             <SubmitButton onClick={props.handleClose} type="submit">
-                Log In
+                <Link to={"/user"} style ={{color : "white"}}> Log In</Link>
+               
             </SubmitButton>
         </SignInContainer>
     )

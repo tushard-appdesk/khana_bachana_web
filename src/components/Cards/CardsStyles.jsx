@@ -32,7 +32,7 @@ border-radius: 10px;
 border : 0;
 cursor : pointer;
 color : white;
-background-color: #348758;
+background-color: ${({active}) => active ? `#0000FF` : `#348758`};
 text-align: center;
 `
 
