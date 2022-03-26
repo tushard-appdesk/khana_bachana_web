@@ -2,17 +2,24 @@ import React from "react";
 import { SubmitButton } from "../SignInForm/SignInStyles";
 import { Input, ListingFormContainer, ListingHeading } from "./ListingFormStyles";
 import { useFormik } from "formik";
+import axios from "axios";
+import { getToken } from "../../../token";
 
 export default function ListingForm(props) {
+    const id = getToken("userId");
     const formik = useFormik({
         initialValues: {
             name: "",
             description: "",
             price: "",
-            producerId: ""
+            producerId: id
         },
         onSubmit: values => {
-            console.log(values);
+            axios.post("http://localhost:8080/listing/add", values).then(response=> {
+                console.log(response);
+            }, error => {
+                console.log(error);
+            })
         },
     });
     return (
