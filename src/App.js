@@ -13,7 +13,8 @@ function App() {
       {/* <TopBar />
       <HomePage />
       <Footer /> */}
-      <User />
+      {/* <User /> */}
+      <Producer />
     </>
   );
 }
