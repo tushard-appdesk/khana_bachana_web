@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TopBar from "../TopBar/TopBAr";
 import { ProducerContainer, Image, Button } from "./ProducerStyles";
 import TagFood from "../../assests/icons/tagfood.jpg";
@@ -8,10 +8,29 @@ import Card from "../Cards/Card";
 import { LogoContainer, TopBarConatiner, TopContainer, TopItem } from "../TopBar/ToBarStyles";
 import Logo from "../../assests/icons/logo.png";
 
+import axios from "axios";
+import { getToken } from "../../token";
+import { CardsContainer } from "./ProducerStyles";
 
 export default function Producer() {
     const [openModal, setOpenModal] = useState(false);
     const handleClose = () => setOpenModal(false);
+    
+    const id = getToken("userId");
+    const [listing, setListing] = useState();
+    let listings = [];
+
+    useEffect(() => {
+        axios.get("http://localhost:8080/listing/getByProducer/"+id).then(
+          (response) => {
+            listings = response.data;
+            setListing(listings);
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      }, []);
 
     return (
         <ProducerContainer>
@@ -36,6 +55,12 @@ export default function Producer() {
                 handleClose={handleClose}>
                 <ListingForm handleClose={() => handleClose(false)}/>
             </Modal>
+            <CardsContainer>
+        {console.log(listing)}
+        {listing?.map((items, index) => {
+          return <Card item={items} key={index} />;
+        })}
+      </CardsContainer>
         </ProducerContainer>
     )
 }

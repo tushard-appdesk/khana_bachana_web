@@ -22,3 +22,10 @@ background-color: #348758;
 font-size: 26px;
 
 `
+
+export const CardsContainer = styled.div`
+display : flex;
+flex-direction: row;
+margin: 50px;
+flex-wrap: wrap;
+`
