@@ -3,6 +3,7 @@ import Card from './components/Cards/Card';
 import Footer from './components/Footer/Footer';
 import HomePage from './components/HomePage/HomePage';
 import TopBar from './components/TopBar/TopBAr';
+import User from './components/User/User';
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       {/* <TopBar />
       <HomePage />
       <Footer /> */}
-      <Card />
+      <User />
     </>
   );
 }
