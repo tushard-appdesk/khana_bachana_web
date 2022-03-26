@@ -4,6 +4,10 @@ import { ProducerContainer, Image, Button } from "./ProducerStyles";
 import TagFood from "../../assests/icons/tagfood.jpg";
 import Modal from "../Modal/Modal";
 import ListingForm from "../Forms/ListingForm/ListingForm";
+import Card from "../Cards/Card";
+import { LogoContainer, TopBarConatiner, TopContainer, TopItem } from "../TopBar/ToBarStyles";
+import Logo from "../../assests/icons/logo.png";
+
 
 export default function Producer() {
     const [openModal, setOpenModal] = useState(false);
@@ -11,11 +15,21 @@ export default function Producer() {
 
     return (
         <ProducerContainer>
-            <TopBar />
+            <TopBarConatiner>
+                <LogoContainer>
+                <img src={Logo} width="130" />
+                </LogoContainer>
+                <TopContainer>
+                    <TopItem>
+                        Log Out
+                    </TopItem>
+                </TopContainer>
+            </TopBarConatiner>
             <Image src={TagFood} />
             <Button onClick={() => setOpenModal(true)}>
                 Add Listing
             </Button>
+            
             <Modal
                 openModal={openModal}
                 setOpenModal={setOpenModal}

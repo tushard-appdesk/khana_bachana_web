@@ -4,6 +4,8 @@ import axios from "axios";
 import { CardsContainer, UserContainer, Image } from "./UserStyles";
 import TopBar from "../TopBar/TopBAr";
 import TagImage from "../../assests/icons/tagfood.jpg";
+import { LogoContainer, TopBarConatiner, TopContainer, TopItem } from "../TopBar/ToBarStyles";
+import Logo from "../../assests/icons/logo.png";
 
 export default function User() {
   const [listing, setListing] = useState();
@@ -21,8 +23,17 @@ export default function User() {
   }, []);
   return (
     <UserContainer>
-    <TopBar />
-    <Image src={TagImage}/>
+      <TopBarConatiner>
+        <LogoContainer>
+          <img src={Logo} width="130" />
+        </LogoContainer>
+        <TopContainer>
+          <TopItem>
+            Log Out
+          </TopItem>
+        </TopContainer>
+      </TopBarConatiner>
+      <Image src={TagImage} />
       <CardsContainer>
         {console.log(listing)}
         {listing?.map((items, index) => {
