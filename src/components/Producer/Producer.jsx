@@ -7,6 +7,7 @@ import ListingForm from "../Forms/ListingForm/ListingForm";
 import Card from "../Cards/Card";
 import { LogoContainer, TopBarConatiner, TopContainer, TopItem } from "../TopBar/ToBarStyles";
 import Logo from "../../assests/icons/logo.png";
+import { Link } from "react-router-dom";
 
 import axios from "axios";
 import { getToken } from "../../token";
@@ -36,11 +37,14 @@ export default function Producer() {
         <ProducerContainer>
             <TopBarConatiner>
                 <LogoContainer>
-                <img src={Logo} width="130" />
+                    <img src={Logo} width="130" />
                 </LogoContainer>
                 <TopContainer>
-                    <TopItem>
-                        Log Out
+                    <TopItem >
+                        <Link style={{color : "white"}} to="/" >
+                            Log Out
+                        </Link>
+
                     </TopItem>
                 </TopContainer>
             </TopBarConatiner>
@@ -48,12 +52,12 @@ export default function Producer() {
             <Button onClick={() => setOpenModal(true)}>
                 Add Listing
             </Button>
-            
+
             <Modal
                 openModal={openModal}
                 setOpenModal={setOpenModal}
                 handleClose={handleClose}>
-                <ListingForm handleClose={() => handleClose(false)}/>
+                <ListingForm handleClose={() => handleClose(false)} />
             </Modal>
             <CardsContainer>
         {console.log(listing)}

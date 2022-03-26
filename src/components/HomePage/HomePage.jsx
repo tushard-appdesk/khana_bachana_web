@@ -3,10 +3,13 @@ import { BackContainer, BackImg, Heading } from "../../Styles/appStyles";
 import Background from "../../assests/icons/background.jpg";
 import { Data1, Heading1, Heading2, InfoHeading, Data2, FoodWaste, Background2, Data3 } from "./HomePageStyles";
 import FoodWastes from "../../assests/icons/WasteFood.png"
+import TopBar from "../TopBar/TopBAr";
+import Footer from "../Footer/Footer";
 
 export default function HomePage() {
     return (
         <>
+        <TopBar />
             <BackContainer>
                 <BackImg src={Background} />
             </BackContainer>
@@ -37,6 +40,7 @@ export default function HomePage() {
                     over 25 lakh indians die of hunger every year
                 </Data2>
             </Background2>
+            <Footer />
         </>
     )
 }

@@ -6,6 +6,7 @@ import TopBar from "../TopBar/TopBAr";
 import TagImage from "../../assests/icons/tagfood.jpg";
 import { LogoContainer, TopBarConatiner, TopContainer, TopItem } from "../TopBar/ToBarStyles";
 import Logo from "../../assests/icons/logo.png";
+import { Link } from "react-router-dom";
 
 export default function User() {
   const [listing, setListing] = useState();
@@ -29,7 +30,10 @@ export default function User() {
         </LogoContainer>
         <TopContainer>
           <TopItem>
-            Log Out
+            <Link style={{ color: "white" }} to="/" >
+              Log Out
+            </Link>
+
           </TopItem>
         </TopContainer>
       </TopBarConatiner>
